@@ -22,7 +22,7 @@ class CategoryViewModel: ViewModel() {
         viewModelScope.launch{
             try {
                 val result = apiService.getCategories()
-                _foodCategory.value = UiState.Success(result)
+                _foodCategory.value = UiState.Success(result.categories)
             } catch (e: Exception){
                 _foodCategory.value = UiState.Error(e.message ?: "Unknown error")
             }
