@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class CategoryViewModel: ViewModel() {
-    private val _foodCategory = MutableStateFlow<UiState<Root>>(UiState.Loading)
+    private val _foodCategory = MutableStateFlow<UiState>(UiState.Loading)
     val foodCategory = _foodCategory.asStateFlow()
 
     init {
@@ -30,6 +30,7 @@ class CategoryViewModel: ViewModel() {
     }
 
     fun retryFetch() {
+        _foodCategory.value = UiState.Loading
         fetchCategories()
     }
 }

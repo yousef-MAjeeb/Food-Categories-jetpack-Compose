@@ -25,11 +25,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-@Composable
-fun getrespond(){
-
-    LaunchedEffect(Unit) {
-
-    }
-}
